@@ -1,7 +1,13 @@
 -#  This file is app/views/movies/index.html.haml
 %h1 All Movies
 
-%table#movies.{class: 'title', id: 'movies'}
+= form_tag movies_path, :id => "ratings_form", :method => :get do
+  Include:
+  - @all_ratings.each do |rating|
+    = rating
+    = check_box_tag "ratings[#{rating}]"
+  = submit_tag 'Refresh'
+%table#movies
   %thead
     %tr
       %th{:class => ("hilite" if @order == "title")}= link_to 'Title', movies_path(order: "title"), id: 'title_header'

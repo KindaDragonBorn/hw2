@@ -7,6 +7,7 @@
   end
 
   def index
+    @all_ratings = Movie.ratings
     @order = params[:order]
     @movies = Movie.order(@order)
     #@movies = Movie.order('title')
