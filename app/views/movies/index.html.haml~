@@ -1,7 +1,7 @@
 -#  This file is app/views/movies/index.html.haml
 %h1 All Movies
 
-%table#movies
+%table#movies.{class: 'title', id: 'movies'}
   %thead
     %tr
       %th{:class => ("hilite" if @order == "title")}= link_to 'Title', movies_path(order: "title"), id: 'title_header'

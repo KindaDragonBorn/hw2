@@ -7,8 +7,7 @@
   end
 
   def index
-    @order = params[:order]
-    @movies = Movie.order(@order)
+    @movies = Movie.order(params[:order])
     #@movies = Movie.order('title')
   end
 
