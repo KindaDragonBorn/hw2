@@ -46,10 +46,6 @@
       redirect_to movies_path order: @order, ratings: @ratings
     end
     
-    if @ratings == nil
-      @ratings = Hash[Movie.all_ratings.map {|v| [v,1]}]
-    end
-
     if @ratings and @order
       @movies = Movie.where(rating: @ratings.keys).order(@order)
     elsif @order
@@ -59,8 +55,6 @@
     else
       @movies = Movie.all
     end
-    
-
   end
 
   def new
