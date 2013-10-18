@@ -39,6 +39,7 @@
     else
       @ratings = nil
     end
+
     
     #flash.keep lets us keep the params from before; Sort of like session but for less time
     if redirect
